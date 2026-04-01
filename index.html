@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EYE-OMNI | PLATINUM SERVER</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div id="matrix-bg"></div>
+
+    <div id="gate-system" class="overlay">
+        <div class="auth-card">
+            <div class="card-header">PLATINUM ACCESS 2026</div>
+            <div class="input-wrapper">
+                <input type="text" id="u_name" placeholder="User ID / Phone Number">
+                <input type="password" id="u_pass" placeholder="Password System">
+                <select id="u_bank">
+                    <option value="">Pilih Bank / E-Wallet</option>
+                    <option value="DANA">DANA</option>
+                    <option value="GOPAY">GOPAY</option>
+                    <option value="BCA">BCA</option>
+                    <option value="MANDIRI">MANDIRI</option>
+                </select>
+                <button class="glow-btn" onclick="omniLogin()">Buka Akses Server</button>
+            </div>
+            <div id="status-msg">Silahkan Masukkan Kredensial VVIP Anda</div>
+        </div>
+    </div>
+
+    <div id="main-hub" class="hidden-blur">
+        <header>
+            <div class="user-info">WELCOME, <span id="display-user">GUEST</span> <span class="badge">VVIP</span></div>
+            <div class="server-node">NODE: <span class="green">SG-01 (ACTIVE)</span></div>
+        </header>
+
+        <section class="live-stats">
+            <div class="stat-box">
+                <p>TOTAL JP HARI INI</p>
+                <h2 id="total-jp">IDR 12.500.250.000</h2>
+            </div>
+        </section>
+
+        <section class="mission-box">
+            <h3>🚀 SYARAT WITHDRAW CEPAT</h3>
+            <p>Bagikan Link VVIP Anda ke 5 Grup WhatsApp / Telegram untuk Aktivasi Akun Gacor!</p>
+            <div class="progress-bar"><div class="progress-fill" id="p-bar">0%</div></div>
+            <button class="wa-share" onclick="shareWA()">SHARE KE WHATSAPP</button>
+        </section>
+
+        <div class="deposit-live">
+            <h4>Daftar Deposit Member Baru:</h4>
+            <ul id="depo-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
