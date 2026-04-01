@@ -1,36 +1,36 @@
-:root { --gold: #d4af37; --dark: #0a0a0a; --red: #ff0000; --green: #00ff41; }
-body { background: var(--dark); color: #fff; font-family: 'Roboto', sans-serif; margin: 0; overflow-x: hidden; }
+:root { --purple: #a020f0; --plasma: #00ffff; --dark: #050505; }
+body { background: var(--dark); color: #fff; font-family: 'Orbitron', sans-serif; margin: 0; overflow: hidden; }
 
-.news-ticker { background: #1a1a1a; color: var(--gold); padding: 5px 0; border-bottom: 1px solid #333; font-size: 12px; }
+.global-bar { background: #000; border-bottom: 1px solid #111; padding: 10px 20px; display: flex; justify-content: space-between; font-size: 9px; color: var(--plasma); letter-spacing: 1px; }
 
-.overlay { position: fixed; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; justify-content: center; align-items: center; }
+.overlay { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; justify-content: center; align-items: center; }
+.v20-container { background: #080808; border: 1px solid #1a1a1a; padding: 40px; width: 330px; border-radius: 15px; text-align: center; border-top: 3px solid var(--purple); box-shadow: 0 0 50px rgba(160, 32, 240, 0.2); }
+.logo-v20 { font-family: 'Goldman'; font-size: 2.2rem; }
+.logo-v20 span { color: var(--purple); text-shadow: 0 0 20px var(--purple); }
+.subtitle { font-size: 8px; color: #444; margin-bottom: 25px; letter-spacing: 2px; }
 
-.auth-card {
-    background: linear-gradient(180deg, #151515 0%, #000 100%);
-    border: 1px solid var(--gold); border-radius: 15px; padding: 40px; width: 320px; text-align: center;
-}
+.v20-field { text-align: left; margin-bottom: 15px; }
+.v20-field label { font-size: 9px; color: var(--purple); margin-left: 5px; }
+input, select { width: 100%; padding: 15px; background: #000; border: 1px solid #222; color: #fff; border-radius: 5px; font-family: 'Orbitron'; font-size: 11px; margin-top: 5px; box-sizing: border-box; }
 
-.brand-logo { font-family: 'Goldman'; font-size: 2rem; color: #fff; margin-bottom: 10px; }
-.brand-logo span { color: var(--gold); }
+.v20-btn { width: 100%; padding: 18px; background: var(--purple); color: #fff; border: none; font-weight: 900; cursor: pointer; margin-top: 15px; box-shadow: 0 0 20px rgba(160, 32, 240, 0.4); }
 
-.shimmer { font-weight: bold; color: var(--gold); animation: blink 1s infinite; }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+/* Face ID Scanner */
+.face-frame { width: 120px; height: 120px; border: 2px solid var(--plasma); border-radius: 20px; margin: 0 auto 20px; position: relative; }
+.scanner-line { position: absolute; width: 100%; height: 2px; background: var(--plasma); box-shadow: 0 0 15px var(--plasma); animation: scan 2s infinite linear; }
+@keyframes scan { 0%, 100% { top: 0; } 50% { top: 100%; } }
 
-input, select { width: 100%; padding: 12px; margin: 8px 0; background: #000; border: 1px solid #444; color: #fff; border-radius: 5px; }
+/* Dashboard */
+.main-display { text-align: center; padding: 60px 20px; background: radial-gradient(circle, #101015 0%, #000 100%); border-bottom: 1px solid #111; }
+#user-bal { font-size: 2.5rem; color: var(--purple); margin: 10px 0; font-weight: 900; text-shadow: 0 0 20px rgba(160, 32, 240, 0.5); }
+.v20-status { font-size: 9px; color: #00ff88; border: 1px solid #00ff88; padding: 3px 10px; border-radius: 50px; display: inline-block; }
 
-.main-btn {
-    width: 100%; padding: 15px; background: linear-gradient(to bottom, var(--gold), #8b6e22);
-    border: none; color: #000; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;
-}
+.action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px; }
+.card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 20px; text-align: center; border-radius: 12px; }
+.pulse-purple { animation: p-purple 2s infinite; }
+@keyframes p-purple { 0% { border-color: var(--purple); } 50% { border-color: #fff; } 100% { border-color: var(--purple); } }
 
-.jackpot-counter { text-align: center; padding: 20px; background: rgba(255,215,0,0.1); border-radius: 10px; margin: 10px; }
-#total-jp { font-family: 'Goldman'; color: var(--gold); font-size: 1.8rem; margin: 0; }
+.v20-terminal { background: #000; margin: 10px 20px; padding: 15px; font-family: monospace; font-size: 10px; color: #333; border-radius: 5px; height: 60px; overflow: hidden; }
 
-.game-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
-.game-card { background: #111; border-radius: 10px; overflow: hidden; position: relative; border: 1px solid #333; }
-.rtp-tag { position: absolute; top: 5px; left: 5px; background: var(--green); color: #000; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 3px; }
-
-.floating-chat { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: var(--gold); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px rgba(212,175,55,0.5); cursor: pointer; }
-.chat-notif { position: absolute; top: 0; right: 0; background: var(--red); color: #fff; border-radius: 50%; width: 20px; height: 20px; font-size: 12px; text-align: center; line-height: 20px; }
-
-.hidden-blur { filter: blur(30px); pointer-events: none; }
+.blur-v20 { filter: blur(80px); pointer-events: none; }
+.hidden { display: none !important; }
