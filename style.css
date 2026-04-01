@@ -1,0 +1,28 @@
+:root { --platinum: #e5e4e2; --gold: #ffd700; --neon: #00ff41; --danger: #ff003c; }
+body { margin: 0; background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+
+#matrix-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.15; }
+
+.overlay { position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 100; }
+
+.auth-card {
+    background: #111; border: 2px solid var(--platinum); border-radius: 10px; width: 350px; padding: 30px;
+    box-shadow: 0 0 25px rgba(229, 228, 226, 0.3); text-align: center;
+}
+
+.card-header { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; color: var(--platinum); text-shadow: 0 0 10px white; }
+
+input, select { width: 100%; padding: 12px; margin: 10px 0; background: #000; border: 1px solid #333; color: var(--platinum); box-sizing: border-box; }
+
+.glow-btn { width: 100%; padding: 15px; background: var(--platinum); color: #000; font-weight: bold; border: none; cursor: pointer; transition: 0.5s; }
+.glow-btn:hover { background: var(--neon); transform: scale(1.05); box-shadow: 0 0 20px var(--neon); }
+
+.hidden-blur { filter: blur(20px); transition: 1s; }
+.active-dashboard { filter: blur(0); }
+
+.mission-box { background: #1a1a1a; margin: 20px; padding: 20px; border-radius: 10px; border: 1px dashed var(--gold); text-align: center; }
+.progress-bar { width: 100%; background: #000; height: 20px; border-radius: 10px; margin: 15px 0; overflow: hidden; }
+.progress-fill { background: var(--gold); height: 100%; width: 0%; transition: 1s; color: black; font-weight: bold; font-size: 12px; }
+
+.wa-share { background: #25d366; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+.green { color: var(--neon); text-shadow: 0 0 5px var(--neon); }
