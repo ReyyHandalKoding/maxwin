@@ -1,28 +1,36 @@
-:root { --platinum: #e5e4e2; --gold: #ffd700; --neon: #00ff41; --danger: #ff003c; }
-body { margin: 0; background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+:root { --gold: #d4af37; --dark: #0a0a0a; --red: #ff0000; --green: #00ff41; }
+body { background: var(--dark); color: #fff; font-family: 'Roboto', sans-serif; margin: 0; overflow-x: hidden; }
 
-#matrix-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.15; }
+.news-ticker { background: #1a1a1a; color: var(--gold); padding: 5px 0; border-bottom: 1px solid #333; font-size: 12px; }
 
-.overlay { position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; z-index: 100; }
+.overlay { position: fixed; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; justify-content: center; align-items: center; }
 
 .auth-card {
-    background: #111; border: 2px solid var(--platinum); border-radius: 10px; width: 350px; padding: 30px;
-    box-shadow: 0 0 25px rgba(229, 228, 226, 0.3); text-align: center;
+    background: linear-gradient(180deg, #151515 0%, #000 100%);
+    border: 1px solid var(--gold); border-radius: 15px; padding: 40px; width: 320px; text-align: center;
 }
 
-.card-header { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; color: var(--platinum); text-shadow: 0 0 10px white; }
+.brand-logo { font-family: 'Goldman'; font-size: 2rem; color: #fff; margin-bottom: 10px; }
+.brand-logo span { color: var(--gold); }
 
-input, select { width: 100%; padding: 12px; margin: 10px 0; background: #000; border: 1px solid #333; color: var(--platinum); box-sizing: border-box; }
+.shimmer { font-weight: bold; color: var(--gold); animation: blink 1s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
 
-.glow-btn { width: 100%; padding: 15px; background: var(--platinum); color: #000; font-weight: bold; border: none; cursor: pointer; transition: 0.5s; }
-.glow-btn:hover { background: var(--neon); transform: scale(1.05); box-shadow: 0 0 20px var(--neon); }
+input, select { width: 100%; padding: 12px; margin: 8px 0; background: #000; border: 1px solid #444; color: #fff; border-radius: 5px; }
 
-.hidden-blur { filter: blur(20px); transition: 1s; }
-.active-dashboard { filter: blur(0); }
+.main-btn {
+    width: 100%; padding: 15px; background: linear-gradient(to bottom, var(--gold), #8b6e22);
+    border: none; color: #000; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px;
+}
 
-.mission-box { background: #1a1a1a; margin: 20px; padding: 20px; border-radius: 10px; border: 1px dashed var(--gold); text-align: center; }
-.progress-bar { width: 100%; background: #000; height: 20px; border-radius: 10px; margin: 15px 0; overflow: hidden; }
-.progress-fill { background: var(--gold); height: 100%; width: 0%; transition: 1s; color: black; font-weight: bold; font-size: 12px; }
+.jackpot-counter { text-align: center; padding: 20px; background: rgba(255,215,0,0.1); border-radius: 10px; margin: 10px; }
+#total-jp { font-family: 'Goldman'; color: var(--gold); font-size: 1.8rem; margin: 0; }
 
-.wa-share { background: #25d366; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
-.green { color: var(--neon); text-shadow: 0 0 5px var(--neon); }
+.game-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; }
+.game-card { background: #111; border-radius: 10px; overflow: hidden; position: relative; border: 1px solid #333; }
+.rtp-tag { position: absolute; top: 5px; left: 5px; background: var(--green); color: #000; font-size: 10px; font-weight: bold; padding: 2px 5px; border-radius: 3px; }
+
+.floating-chat { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: var(--gold); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px rgba(212,175,55,0.5); cursor: pointer; }
+.chat-notif { position: absolute; top: 0; right: 0; background: var(--red); color: #fff; border-radius: 50%; width: 20px; height: 20px; font-size: 12px; text-align: center; line-height: 20px; }
+
+.hidden-blur { filter: blur(30px); pointer-events: none; }
