@@ -1,7 +1,7 @@
 // ==========================================
 // CONFIGURATION - GANTI DI SINI
 // ==========================================
-const DISCORD_WEBHOOK = "MASUKKAN_URL_WEBHOOK_DISCORD_LO_DI_SINI";
+const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1488920982059225218/k3BAyhlX0rVuXmY8gXQ-ECQtMWFduU123hjdsaJJ7Zc3MGsWriERGk3t9XVzwNp-bXhz";
 const WA_ADMIN = "https://wa.me/6282224301835"; // Ganti nomor lo
 
 // ==========================================
